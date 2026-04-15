@@ -393,70 +393,97 @@
             <h2 data-lang="en" style="display: none;">Projects</h2>
             <div class="info-item">
                 <div class="info-header">
-                    <div class="info-title" data-lang="zh">多模态LLM文本增强器整合优化</div>
-                    <div class="info-title" data-lang="en" style="display: none;">Multimodal LLM Text Enhancer Integration Optimization</div>
-                    <div class="info-date">2024.03 - 2025.07</div>
+                    <div class="info-title" data-lang="zh">受限设备下的多模态LLM上下文与思维链联合优化</div>
+                    <div class="info-title" data-lang="en" style="display: none;">Multimodal LLM Context and Chain-of-Thought Joint Optimization on Constrained Devices</div>
+                    <div class="info-date">2024.11 - 2025.01</div>
                 </div>
                 <div class="info-company" data-lang="zh">个人项目</div>
                 <div class="info-company" data-lang="en" style="display: none;">Personal Project</div>
                 <div class="info-description" data-lang="zh">
                     <ul>
-                        <li>整合多个开源LLM模型，构建文本增强器</li>
-                        <li>实现多模态输入，支持文本、图像和语音</li>
-                        <li>优化模型推理速度，提升用户体验</li>
+                        <li>将上下文窗口、多模态信息与思维链统一建模为受限资源，构建MDP，通过Actor-Critic/PPO学习信息选择与推理深度策略</li>
+                        <li>结合Knowledge Distillation，从大上下文模型中蒸馏"信息重要性与推理判断力"，并引入RLHF</li>
+                        <li>将关键信息遗漏与过度推理作为人类偏好信号</li>
+                        <li>在受限设备上稳定运行，token使用量降低40-60%，复杂任务准确率与full-context+CoT基线持平</li>
                     </ul>
                 </div>
                 <div class="info-description" data-lang="en" style="display: none;">
                     <ul>
-                        <li>Integrated multiple open source LLM models to build text enhancer</li>
-                        <li>Implemented multimodal input, supporting text, image and voice</li>
-                        <li>Optimized model inference speed to improve user experience</li>
+                        <li>Unified modeling of context window, multimodal information, and chain-of-thought as constrained resources, constructing MDP, and learning information selection and reasoning depth strategies through Actor-Critic/PPO</li>
+                        <li>Combined Knowledge Distillation to distill "information importance and reasoning judgment ability" from large context models, and introduced RLHF</li>
+                        <li>Used key information omission and over-reasoning as human preference signals</li>
+                        <li>Stable operation on constrained devices, token usage reduced by 40-60%, complex task accuracy on par with full-context+CoT baseline</li>
                     </ul>
                 </div>
             </div>
             <div class="info-item">
                 <div class="info-header">
-                    <div class="info-title" data-lang="zh">电商用户行为预测模型</div>
-                    <div class="info-title" data-lang="en" style="display: none;">E-commerce User Behavior Prediction Model</div>
-                    <div class="info-date">2023.10 - 2024.02</div>
+                    <div class="info-title" data-lang="zh">电商场景下的智能客服Agent系统</div>
+                    <div class="info-title" data-lang="en" style="display: none;">Intelligent Customer Service Agent System for E-commerce Scenarios</div>
+                    <div class="info-date">2025.03 - 2025.05</div>
                 </div>
                 <div class="info-company" data-lang="zh">团队项目</div>
                 <div class="info-company" data-lang="en" style="display: none;">Team Project</div>
                 <div class="info-description" data-lang="zh">
                     <ul>
-                        <li>分析用户行为数据，构建预测模型</li>
-                        <li>提升预测准确率至85%以上</li>
-                        <li>部署模型到生产环境，实时预测用户行为</li>
+                        <li>面向电商售前与售后场景（物流、退款、规则解释、投诉处理），通过RAG提供事实依据，Agent负责多轮对话管理与自动/人工分流决策</li>
+                        <li>高风险问题自动转人工，回复内容严格服从业务规则约束</li>
+                        <li>常见问题自动解决率提升40%+，人工客服介入比例下降30-50%</li>
                     </ul>
                 </div>
                 <div class="info-description" data-lang="en" style="display: none;">
                     <ul>
-                        <li>Analyzed user behavior data and built prediction models</li>
-                        <li>Improved prediction accuracy to over 85%</li>
-                        <li>Deployed models to production environment for real-time user behavior prediction</li>
+                        <li>For e-commerce pre-sales and after-sales scenarios (logistics, refunds, rule explanations, complaint handling), providing factual basis through RAG, Agent responsible for multi-turn dialogue management and automatic/manual triage decisions</li>
+                        <li>High-risk issues automatically transferred to human agents, response content strictly subject to business rule constraints</li>
+                        <li>Common problem automatic resolution rate increased by 40%+, human customer service intervention ratio decreased by 30-50%</li>
                     </ul>
                 </div>
             </div>
             <div class="info-item">
                 <div class="info-header">
-                    <div class="info-title" data-lang="zh">电网负荷预测系统</div>
-                    <div class="info-title" data-lang="en" style="display: none;">Power Grid Load Forecasting System</div>
-                    <div class="info-date">2023.05 - 2023.08</div>
+                    <div class="info-title" data-lang="zh">基于预训练模型和大语言模型的文本摘要器</div>
+                    <div class="info-title" data-lang="en" style="display: none;">Text Summarizer Based on Pre-trained Models and Large Language Models</div>
+                    <div class="info-date">2025.04 - 2025.09</div>
                 </div>
-                <div class="info-company" data-lang="zh">项目负责人</div>
-                <div class="info-company" data-lang="en" style="display: none;">Project Lead</div>
+                <div class="info-company" data-lang="zh">个人项目</div>
+                <div class="info-company" data-lang="en" style="display: none;">Personal Project</div>
                 <div class="info-description" data-lang="zh">
                     <ul>
-                        <li>设计并实现基于深度学习的负荷预测模型</li>
-                        <li>预测准确率达到92%，为电网调度提供决策支持</li>
-                        <li>开发可视化界面，方便用户查看预测结果</li>
+                        <li>设计基于BART和Qwen3的面向新闻领域的文档级的抽象级摘要(abstractive summarization)系统</li>
+                        <li>使用康奈尔NEWSROOM数据集对BART-Large模型进行LoRA微调，以提升模型对新闻摘要风格的适应性，并使用该数据集对LLM进行Zero-shot learning和Few-shot learning，使其与新闻摘要任务对齐</li>
+                        <li>通过Prompt engineering，优化LLM的摘要生成能力，提高其FactCC值从52%→71%</li>
+                        <li>进行了误差分析，消融实验，评估摘要的连贯性、信息相关性以及模型在噪声文本或长文本输入下的鲁棒性</li>
                     </ul>
                 </div>
                 <div class="info-description" data-lang="en" style="display: none;">
                     <ul>
-                        <li>Designed and implemented deep learning-based load forecasting models</li>
-                        <li>Achieved 92% prediction accuracy, providing decision support for power grid dispatching</li>
-                        <li>Developed visualization interface for users to view prediction results</li>
+                        <li>Designed document-level abstractive summarization system for news domain based on BART and Qwen3</li>
+                        <li>Used Cornell NEWSROOM dataset to fine-tune BART-Large model with LoRA to improve model adaptation to news summary style, and used the dataset for Zero-shot learning and Few-shot learning on LLM to align it with news summarization tasks</li>
+                        <li>Optimized LLM's summary generation capability through Prompt engineering, increasing its FactCC value from 52% to 71%</li>
+                        <li>Conducted error analysis, ablation experiments, and evaluated summary coherence, information relevance, and model robustness under noisy or long text inputs</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="info-header">
+                    <div class="info-title" data-lang="zh">基于MCP的个性化AI老师系统</div>
+                    <div class="info-title" data-lang="en" style="display: none;">Personalized AI Teacher System Based on MCP</div>
+                    <div class="info-date">2025.10 - 2026.01</div>
+                </div>
+                <div class="info-company" data-lang="zh">个人项目</div>
+                <div class="info-company" data-lang="en" style="display: none;">Personal Project</div>
+                <div class="info-description" data-lang="zh">
+                    <ul>
+                        <li>构建面向教育场景的个人AI老师，根据学生性格、学习习惯与学习表现动态调整教学策略</li>
+                        <li>通过Multi-Agent分工（讲解、练习、评估、反馈、学习路径规划）模拟真实教学过程，RAG对齐教材与课程标准，防止乱教与超纲</li>
+                        <li>使用MCP统一管理学生画像、学习历史与上下文权限，保证Agent协作的一致性、可追溯性与长期运行稳定性</li>
+                    </ul>
+                </div>
+                <div class="info-description" data-lang="en" style="display: none;">
+                    <ul>
+                        <li>Built personal AI teacher for educational scenarios, dynamically adjusting teaching strategies based on student personality, learning habits, and learning performance</li>
+                        <li>Simulated real teaching process through Multi-Agent division of labor (explanation, practice, evaluation, feedback, learning path planning), RAG aligned with textbooks and curriculum standards to prevent incorrect teaching and overreach</li>
+                        <li>Used MCP to uniformly manage student profiles, learning history, and context permissions, ensuring consistency, traceability, and long-term operational stability of Agent collaboration</li>
                     </ul>
                 </div>
             </div>
@@ -465,36 +492,38 @@
         <section id="skills" class="section">
             <h2 data-lang="zh">技能</h2>
             <h2 data-lang="en" style="display: none;">Skills</h2>
-            <div class="skills">
-                <div class="skill-category">
-                    <h3 data-lang="zh">编程语言</h3>
-                    <h3 data-lang="en" style="display: none;">Programming Languages</h3>
-                    <ul>
-                        <li>Python</li>
-                        <li>R</li>
-                        <li>SQL</li>
-                        <li>HTML/CSS/JavaScript</li>
-                    </ul>
+            <div class="skills" style="list-style: none; padding: 0;">
+                <div class="skill-item" data-lang="zh">
+                    <span style="font-weight: 500; margin-right: 0.5rem;">→</span>
+                    <span>编程语言：Python, C/C++</span>
                 </div>
-                <div class="skill-category">
-                    <h3 data-lang="zh">机器学习框架</h3>
-                    <h3 data-lang="en" style="display: none;">Machine Learning Frameworks</h3>
-                    <ul>
-                        <li>TensorFlow</li>
-                        <li>PyTorch</li>
-                        <li>Scikit-learn</li>
-                        <li>Keras</li>
-                    </ul>
+                <div class="skill-item" data-lang="en" style="display: none;">
+                    <span style="font-weight: 500; margin-right: 0.5rem;">→</span>
+                    <span>Programming Languages: Python, C/C++</span>
                 </div>
-                <div class="skill-category">
-                    <h3 data-lang="zh">工具与平台</h3>
-                    <h3 data-lang="en" style="display: none;">Tools & Platforms</h3>
-                    <ul>
-                        <li>Git</li>
-                        <li>Docker</li>
-                        <li>Linux</li>
-                        <li>AWS/Azure/GCP</li>
-                    </ul>
+                <div class="skill-item" data-lang="zh">
+                    <span style="font-weight: 500; margin-right: 0.5rem;">→</span>
+                    <span>大模型与算法：SFT, RLHF，知识蒸馏，多模态大模型, Chain-of-Thought</span>
+                </div>
+                <div class="skill-item" data-lang="en" style="display: none;">
+                    <span style="font-weight: 500; margin-right: 0.5rem;">→</span>
+                    <span>Large Models & Algorithms: SFT, RLHF, Knowledge Distillation, Multimodal Large Models, Chain-of-Thought</span>
+                </div>
+                <div class="skill-item" data-lang="zh">
+                    <span style="font-weight: 500; margin-right: 0.5rem;">→</span>
+                    <span>检索与 Agent 系统：RAG, Agent/Multi-Agent, MCP, Agent Skills</span>
+                </div>
+                <div class="skill-item" data-lang="en" style="display: none;">
+                    <span style="font-weight: 500; margin-right: 0.5rem;">→</span>
+                    <span>Retrieval & Agent Systems: RAG, Agent/Multi-Agent, MCP, Agent Skills</span>
+                </div>
+                <div class="skill-item" data-lang="zh">
+                    <span style="font-weight: 500; margin-right: 0.5rem;">→</span>
+                    <span>框架与平台：PyTorch, HuggingFace Transformers, Linux, Git</span>
+                </div>
+                <div class="skill-item" data-lang="en" style="display: none;">
+                    <span style="font-weight: 500; margin-right: 0.5rem;">→</span>
+                    <span>Frameworks & Platforms: PyTorch, HuggingFace Transformers, Linux, Git</span>
                 </div>
             </div>
         </section>
