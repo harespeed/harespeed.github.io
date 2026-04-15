@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HareSpace</title>
+    <title>付强 - 个人主页</title>
     <style>
         * {
             margin: 0;
@@ -40,6 +40,11 @@
         .profile-name {
             font-size: 1.5rem;
             font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        .profile-title {
+            font-size: 1rem;
+            opacity: 0.8;
             margin-bottom: 1rem;
         }
         .social-icons {
@@ -107,6 +112,64 @@
             margin-bottom: 1.5rem;
             padding-bottom: 0.5rem;
             border-bottom: 2px solid #f39c12;
+        }
+        .info-item {
+            margin-bottom: 1.5rem;
+        }
+        .info-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        .info-title {
+            font-weight: bold;
+            color: #34495e;
+        }
+        .info-date {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        .info-company {
+            color: #7f8c8d;
+            margin-bottom: 0.5rem;
+        }
+        .info-description {
+            margin-left: 1rem;
+            line-height: 1.5;
+        }
+        .info-description ul {
+            margin-top: 0.5rem;
+            margin-left: 1.5rem;
+        }
+        .info-description li {
+            margin-bottom: 0.3rem;
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .skill-category {
+            flex: 1;
+            min-width: 250px;
+        }
+        .skill-category h3 {
+            margin-bottom: 0.8rem;
+            color: #34495e;
+        }
+        .skill-category ul {
+            list-style: none;
+        }
+        .skill-category li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .skill-category li:before {
+            content: "•";
+            color: #f39c12;
+            position: absolute;
+            left: 0;
         }
         .contact-info {
             display: flex;
@@ -206,29 +269,36 @@
             .form-row {
                 flex-direction: column;
             }
+            .skills {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
     <div class="sidebar">
         <div class="profile">
-            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20portrait%20photo%20of%20a%20young%20Chinese%20man%20in%20white%20shirt&image_size=square" alt="个人头像" class="profile-img">
-            <div class="profile-name" data-lang="zh">杨洋</div>
-            <div class="profile-name" data-lang="en" style="display: none;">Yang Yang</div>
+            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20portrait%20photo%20of%20a%20young%20Chinese%20man%20with%20glasses&image_size=square" alt="个人头像" class="profile-img">
+            <div class="profile-name" data-lang="zh">付强</div>
+            <div class="profile-name" data-lang="en" style="display: none;">Fu Qiang</div>
+            <div class="profile-title" data-lang="zh">机器学习工程师</div>
+            <div class="profile-title" data-lang="en" style="display: none;">Machine Learning Engineer</div>
         </div>
         <div class="social-icons">
             <a href="#" title="GitHub"><i>🐱</i></a>
             <a href="#" title="WeChat"><i>💬</i></a>
-            <a href="#" title="Email"><i>📧</i></a>
+            <a href="mailto:f777535113@163.com" title="Email"><i>📧</i></a>
             <a href="#" title="Resume"><i>📄</i></a>
             <a href="#" title="Portfolio"><i>🎨</i></a>
         </div>
         <ul class="nav-menu">
-            <li><a href="#" data-lang="zh">主页</a><a href="#" data-lang="en" style="display: none;">Home</a></li>
-            <li><a href="#" data-lang="zh">关于我</a><a href="#" data-lang="en" style="display: none;">About Me</a></li>
-            <li><a href="#" data-lang="zh">教育成就</a><a href="#" data-lang="en" style="display: none;">Education</a></li>
-            <li><a href="#" data-lang="zh">项目演示</a><a href="#" data-lang="en" style="display: none;">Projects</a></li>
-            <li><a href="#" class="active" data-lang="zh">联系我</a><a href="#" class="active" data-lang="en" style="display: none;">Contact</a></li>
+            <li><a href="#home" class="active" data-lang="zh">主页</a><a href="#home" class="active" data-lang="en" style="display: none;">Home</a></li>
+            <li><a href="#about" data-lang="zh">关于我</a><a href="#about" data-lang="en" style="display: none;">About Me</a></li>
+            <li><a href="#education" data-lang="zh">教育背景</a><a href="#education" data-lang="en" style="display: none;">Education</a></li>
+            <li><a href="#experience" data-lang="zh">工作经历</a><a href="#experience" data-lang="en" style="display: none;">Experience</a></li>
+            <li><a href="#projects" data-lang="zh">项目经历</a><a href="#projects" data-lang="en" style="display: none;">Projects</a></li>
+            <li><a href="#skills" data-lang="zh">技能</a><a href="#skills" data-lang="en" style="display: none;">Skills</a></li>
+            <li><a href="#contact" data-lang="zh">联系我</a><a href="#contact" data-lang="en" style="display: none;">Contact</a></li>
         </ul>
     </div>
     <div class="main-content">
@@ -236,69 +306,231 @@
             <button id="zh-btn" class="active" onclick="switchLanguage('zh')">中文</button>
             <button id="en-btn" onclick="switchLanguage('en')">English</button>
         </div>
-        <div class="section">
+        
+        <section id="home" class="section">
+            <h2 data-lang="zh">关于我</h2>
+            <h2 data-lang="en" style="display: none;">About Me</h2>
+            <p data-lang="zh">我是一名机器学习工程师，拥有清华大学计算机科学与技术博士学位。我专注于机器学习、深度学习和自然语言处理领域，具有丰富的项目经验和扎实的技术背景。我热爱解决复杂的技术问题，并且善于团队合作。</p>
+            <p data-lang="en" style="display: none;">I am a machine learning engineer with a Ph.D. in Computer Science and Technology from Tsinghua University. I specialize in machine learning, deep learning, and natural language processing, with rich project experience and solid technical background. I love solving complex technical problems and am good at teamwork.</p>
+        </section>
+        
+        <section id="education" class="section">
+            <h2 data-lang="zh">教育背景</h2>
+            <h2 data-lang="en" style="display: none;">Education</h2>
+            <div class="info-item">
+                <div class="info-header">
+                    <div class="info-title" data-lang="zh">清华大学</div>
+                    <div class="info-title" data-lang="en" style="display: none;">Tsinghua University</div>
+                    <div class="info-date">2019.09 - 2023.07</div>
+                </div>
+                <div class="info-company" data-lang="zh">计算机科学与技术，博士</div>
+                <div class="info-company" data-lang="en" style="display: none;">Computer Science and Technology, Ph.D.</div>
+            </div>
+            <div class="info-item">
+                <div class="info-header">
+                    <div class="info-title" data-lang="zh">北京大学</div>
+                    <div class="info-title" data-lang="en" style="display: none;">Peking University</div>
+                    <div class="info-date">2015.09 - 2019.07</div>
+                </div>
+                <div class="info-company" data-lang="zh">计算机科学与技术，学士</div>
+                <div class="info-company" data-lang="en" style="display: none;">Computer Science and Technology, Bachelor</div>
+            </div>
+        </section>
+        
+        <section id="experience" class="section">
+            <h2 data-lang="zh">工作经历</h2>
+            <h2 data-lang="en" style="display: none;">Work Experience</h2>
+            <div class="info-item">
+                <div class="info-header">
+                    <div class="info-title" data-lang="zh">北京字节跳动科技有限公司</div>
+                    <div class="info-title" data-lang="en" style="display: none;">ByteDance Technology Co., Ltd.</div>
+                    <div class="info-date">2023.09 - 2025.12</div>
+                </div>
+                <div class="info-company" data-lang="zh">机器学习工程师</div>
+                <div class="info-company" data-lang="en" style="display: none;">Machine Learning Engineer</div>
+                <div class="info-description" data-lang="zh">
+                    <ul>
+                        <li>负责推荐系统算法优化，提升用户点击率和留存率</li>
+                        <li>设计并实现多模态融合模型，处理文本、图像和视频数据</li>
+                        <li>参与A/B测试框架搭建，确保模型效果的准确评估</li>
+                        <li>优化模型部署流程，减少推理时间30%，提升系统性能</li>
+                    </ul>
+                </div>
+                <div class="info-description" data-lang="en" style="display: none;">
+                    <ul>
+                        <li>Responsible for recommendation system algorithm optimization, improving user click-through rate and retention rate</li>
+                        <li>Designed and implemented multimodal fusion models to process text, image and video data</li>
+                        <li>Participated in A/B testing framework construction to ensure accurate evaluation of model effects</li>
+                        <li>Optimized model deployment process, reduced inference time by 30%, and improved system performance</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="projects" class="section">
+            <h2 data-lang="zh">项目经历</h2>
+            <h2 data-lang="en" style="display: none;">Projects</h2>
+            <div class="info-item">
+                <div class="info-header">
+                    <div class="info-title" data-lang="zh">多模态LLM文本增强器整合优化</div>
+                    <div class="info-title" data-lang="en" style="display: none;">Multimodal LLM Text Enhancer Integration Optimization</div>
+                    <div class="info-date">2024.03 - 2025.07</div>
+                </div>
+                <div class="info-company" data-lang="zh">个人项目</div>
+                <div class="info-company" data-lang="en" style="display: none;">Personal Project</div>
+                <div class="info-description" data-lang="zh">
+                    <ul>
+                        <li>整合多个开源LLM模型，构建文本增强器</li>
+                        <li>实现多模态输入，支持文本、图像和语音</li>
+                        <li>优化模型推理速度，提升用户体验</li>
+                    </ul>
+                </div>
+                <div class="info-description" data-lang="en" style="display: none;">
+                    <ul>
+                        <li>Integrated multiple open source LLM models to build text enhancer</li>
+                        <li>Implemented multimodal input, supporting text, image and voice</li>
+                        <li>Optimized model inference speed to improve user experience</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="info-header">
+                    <div class="info-title" data-lang="zh">电商用户行为预测模型</div>
+                    <div class="info-title" data-lang="en" style="display: none;">E-commerce User Behavior Prediction Model</div>
+                    <div class="info-date">2023.10 - 2024.02</div>
+                </div>
+                <div class="info-company" data-lang="zh">团队项目</div>
+                <div class="info-company" data-lang="en" style="display: none;">Team Project</div>
+                <div class="info-description" data-lang="zh">
+                    <ul>
+                        <li>分析用户行为数据，构建预测模型</li>
+                        <li>提升预测准确率至85%以上</li>
+                        <li>部署模型到生产环境，实时预测用户行为</li>
+                    </ul>
+                </div>
+                <div class="info-description" data-lang="en" style="display: none;">
+                    <ul>
+                        <li>Analyzed user behavior data and built prediction models</li>
+                        <li>Improved prediction accuracy to over 85%</li>
+                        <li>Deployed models to production environment for real-time user behavior prediction</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="info-header">
+                    <div class="info-title" data-lang="zh">电网负荷预测系统</div>
+                    <div class="info-title" data-lang="en" style="display: none;">Power Grid Load Forecasting System</div>
+                    <div class="info-date">2023.05 - 2023.08</div>
+                </div>
+                <div class="info-company" data-lang="zh">项目负责人</div>
+                <div class="info-company" data-lang="en" style="display: none;">Project Lead</div>
+                <div class="info-description" data-lang="zh">
+                    <ul>
+                        <li>设计并实现基于深度学习的负荷预测模型</li>
+                        <li>预测准确率达到92%，为电网调度提供决策支持</li>
+                        <li>开发可视化界面，方便用户查看预测结果</li>
+                    </ul>
+                </div>
+                <div class="info-description" data-lang="en" style="display: none;">
+                    <ul>
+                        <li>Designed and implemented deep learning-based load forecasting models</li>
+                        <li>Achieved 92% prediction accuracy, providing decision support for power grid dispatching</li>
+                        <li>Developed visualization interface for users to view prediction results</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="skills" class="section">
+            <h2 data-lang="zh">技能</h2>
+            <h2 data-lang="en" style="display: none;">Skills</h2>
+            <div class="skills">
+                <div class="skill-category">
+                    <h3 data-lang="zh">编程语言</h3>
+                    <h3 data-lang="en" style="display: none;">Programming Languages</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>R</li>
+                        <li>SQL</li>
+                        <li>HTML/CSS/JavaScript</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3 data-lang="zh">机器学习框架</h3>
+                    <h3 data-lang="en" style="display: none;">Machine Learning Frameworks</h3>
+                    <ul>
+                        <li>TensorFlow</li>
+                        <li>PyTorch</li>
+                        <li>Scikit-learn</li>
+                        <li>Keras</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3 data-lang="zh">工具与平台</h3>
+                    <h3 data-lang="en" style="display: none;">Tools & Platforms</h3>
+                    <ul>
+                        <li>Git</li>
+                        <li>Docker</li>
+                        <li>Linux</li>
+                        <li>AWS/Azure/GCP</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact" class="section">
             <h2 data-lang="zh">联系我</h2>
             <h2 data-lang="en" style="display: none;">Contact Me</h2>
-            <p data-lang="zh">本人热情随和，活泼开朗，具有进取精神和团队精神，有较强的动手能力。良好协调沟通能力，适应力强，反应快、积极、细心、灵活，具有一定的社会交往能力。如果有同道中人，一起进步。</p>
-            <p data-lang="en" style="display: none;">I am warm and easygoing, lively and cheerful, with enterprising spirit and team spirit, and strong hands-on ability. Good coordination and communication skills, strong adaptability, quick response, positive, careful, flexible, with certain social skills. If there are like-minded people, let's progress together.</p>
-        </div>
-        <div class="contact-info">
-            <div class="contact-details">
-                <div class="contact-item">
-                    <i>📍</i>
-                    <div>
-                        <strong data-lang="zh">联系地址：</strong>
-                        <strong data-lang="en" style="display: none;">Address：</strong>
-                        <span data-lang="zh">北京市朝阳区</span>
-                        <span data-lang="en" style="display: none;">Chaoyang District, Beijing</span>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <i>📧</i>
-                    <div>
-                        <strong data-lang="zh">联系邮箱：</strong>
-                        <strong data-lang="en" style="display: none;">Email：</strong>
-                        <span>test@xCleigah.com</span>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <i>📞</i>
-                    <div>
-                        <strong data-lang="zh">联系电话：</strong>
-                        <strong data-lang="en" style="display: none;">Phone：</strong>
-                        <span>155xxxxxxxxx</span>
-                    </div>
-                </div>
-            </div>
-            <div class="contact-form">
-                <form>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label data-lang="zh">您的名字</label>
-                            <label data-lang="en" style="display: none;">Your Name</label>
-                            <input type="text" placeholder="请输入您的名字" placeholder data-lang="en" style="display: none;" placeholder="Please enter your name">
-                        </div>
-                        <div class="form-group">
-                            <label data-lang="zh">您的邮箱</label>
-                            <label data-lang="en" style="display: none;">Your Email</label>
-                            <input type="email" placeholder="请输入您的邮箱" placeholder data-lang="en" style="display: none;" placeholder="Please enter your email">
+            <div class="contact-info">
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i>📍</i>
+                        <div>
+                            <strong data-lang="zh">联系地址：</strong>
+                            <strong data-lang="en" style="display: none;">Address：</strong>
+                            <span data-lang="zh">北京市</span>
+                            <span data-lang="en" style="display: none;">Beijing</span>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label data-lang="zh">您的主题</label>
-                        <label data-lang="en" style="display: none;">Your Subject</label>
-                        <input type="text" placeholder="请输入主题" placeholder data-lang="en" style="display: none;" placeholder="Please enter subject">
+                    <div class="contact-item">
+                        <i>📧</i>
+                        <div>
+                            <strong data-lang="zh">联系邮箱：</strong>
+                            <strong data-lang="en" style="display: none;">Email：</strong>
+                            <span>f777535113@163.com</span>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label data-lang="zh">您想说的</label>
-                        <label data-lang="en" style="display: none;">Your Message</label>
-                        <textarea placeholder="请输入您的留言" placeholder data-lang="en" style="display: none;" placeholder="Please enter your message"></textarea>
-                    </div>
-                    <button type="submit" class="btn" data-lang="zh">发送留言</button>
-                    <button type="submit" class="btn" data-lang="en" style="display: none;">Send Message</button>
-                </form>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label data-lang="zh">您的名字</label>
+                                <label data-lang="en" style="display: none;">Your Name</label>
+                                <input type="text" placeholder="请输入您的名字" placeholder data-lang="en" style="display: none;" placeholder="Please enter your name">
+                            </div>
+                            <div class="form-group">
+                                <label data-lang="zh">您的邮箱</label>
+                                <label data-lang="en" style="display: none;">Your Email</label>
+                                <input type="email" placeholder="请输入您的邮箱" placeholder data-lang="en" style="display: none;" placeholder="Please enter your email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label data-lang="zh">您的主题</label>
+                            <label data-lang="en" style="display: none;">Your Subject</label>
+                            <input type="text" placeholder="请输入主题" placeholder data-lang="en" style="display: none;" placeholder="Please enter subject">
+                        </div>
+                        <div class="form-group">
+                            <label data-lang="zh">您想说的</label>
+                            <label data-lang="en" style="display: none;">Your Message</label>
+                            <textarea placeholder="请输入您的留言" placeholder data-lang="en" style="display: none;" placeholder="Please enter your message"></textarea>
+                        </div>
+                        <button type="submit" class="btn" data-lang="zh">发送留言</button>
+                        <button type="submit" class="btn" data-lang="en" style="display: none;">Send Message</button>
+                    </form>
+                </div>
             </div>
-        </div>
+        </section>
     </div>
     <a href="#" class="back-to-top">↑</a>
     <script>
@@ -320,6 +552,26 @@
             // 更新页面语言属性
             document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
         }
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // 更新导航菜单激活状态
+                    document.querySelectorAll('.nav-menu a').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                }
+            });
+        });
     </script>
 </body>
 </html>
