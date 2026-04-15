@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人主页</title>
+    <title>HareSpace</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -17,6 +17,27 @@
             color: white;
             padding: 1rem;
             text-align: center;
+            position: relative;
+        }
+        .lang-switch {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+        .lang-switch button {
+            background-color: #444;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            margin: 0 0.25rem;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .lang-switch button:hover {
+            background-color: #555;
+        }
+        .lang-switch button.active {
+            background-color: #0077b5;
         }
         .container {
             max-width: 800px;
@@ -50,23 +71,38 @@
 </head>
 <body>
     <header>
-        <h1>欢迎来到我的个人主页</h1>
+        <div class="lang-switch">
+            <button id="zh-btn" class="active" onclick="switchLanguage('zh')">中文</button>
+            <button id="en-btn" onclick="switchLanguage('en')">English</button>
+        </div>
+        <h1 data-lang="zh">欢迎来到我的个人主页</h1>
+        <h1 data-lang="en" style="display: none;">Welcome to My Personal Page</h1>
     </header>
     <div class="container">
         <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20portrait%20photo%20of%20a%20software%20developer&image_size=square" alt="个人头像" class="profile-img">
-        <h2>关于我</h2>
-        <p>我是一名开发者，热爱编程和技术。这里是我的个人主页，记录我的学习和工作经历。</p>
-        <h2>技能</h2>
+        <h2 data-lang="zh">关于我</h2>
+        <h2 data-lang="en" style="display: none;">About Me</h2>
+        <p data-lang="zh">我是一名开发者，热爱编程和技术。这里是我的个人主页，记录我的学习和工作经历。</p>
+        <p data-lang="en" style="display: none;">I am a developer who loves programming and technology. This is my personal page where I record my learning and work experiences.</p>
+        <h2 data-lang="zh">技能</h2>
+        <h2 data-lang="en" style="display: none;">Skills</h2>
         <ul>
-            <li>前端开发：HTML, CSS, JavaScript</li>
-            <li>后端开发：Python, Node.js</li>
-            <li>版本控制：Git, GitHub</li>
+            <li data-lang="zh">前端开发：HTML, CSS, JavaScript</li>
+            <li data-lang="en" style="display: none;">Frontend Development: HTML, CSS, JavaScript</li>
+            <li data-lang="zh">后端开发：Python, Node.js</li>
+            <li data-lang="en" style="display: none;">Backend Development: Python, Node.js</li>
+            <li data-lang="zh">版本控制：Git, GitHub</li>
+            <li data-lang="en" style="display: none;">Version Control: Git, GitHub</li>
         </ul>
-        <h2>项目</h2>
+        <h2 data-lang="zh">项目</h2>
+        <h2 data-lang="en" style="display: none;">Projects</h2>
         <ul>
-            <li><a href="#">项目1</a> - 项目描述</li>
-            <li><a href="#">项目2</a> - 项目描述</li>
-            <li><a href="#">项目3</a> - 项目描述</li>
+            <li data-lang="zh"><a href="#">项目1</a> - 项目描述</li>
+            <li data-lang="en" style="display: none;"><a href="#">Project 1</a> - Project description</li>
+            <li data-lang="zh"><a href="#">项目2</a> - 项目描述</li>
+            <li data-lang="en" style="display: none;"><a href="#">Project 2</a> - Project description</li>
+            <li data-lang="zh"><a href="#">项目3</a> - 项目描述</li>
+            <li data-lang="en" style="display: none;"><a href="#">Project 3</a> - Project description</li>
         </ul>
         <div class="social-links">
             <a href="https://github.com" target="_blank">GitHub</a>
@@ -74,5 +110,25 @@
             <a href="https://twitter.com" target="_blank">Twitter</a>
         </div>
     </div>
+    <script>
+        function switchLanguage(lang) {
+            // 更新语言按钮状态
+            document.getElementById('zh-btn').classList.remove('active');
+            document.getElementById('en-btn').classList.remove('active');
+            document.getElementById(lang + '-btn').classList.add('active');
+            
+            // 显示对应语言的内容
+            document.querySelectorAll('[data-lang]').forEach(element => {
+                if (element.getAttribute('data-lang') === lang) {
+                    element.style.display = '';
+                } else {
+                    element.style.display = 'none';
+                }
+            });
+            
+            // 更新页面语言属性
+            document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+        }
+    </script>
 </body>
 </html>
